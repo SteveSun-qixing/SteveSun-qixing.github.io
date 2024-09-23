@@ -1,3 +1,4 @@
+/* Version: <%= Date.now() %> */
 /* 全局样式 */
 body {
     margin: 0;
@@ -44,7 +45,7 @@ body {
     opacity: 0; /* 初始透明度为0，用于淡入效果 */
     cursor: pointer;
     z-index: 10; /* 初始 z-index */
-    pointer-events: auto; /* 确保卡片可以接收鼠标事件 */
+    pointer-events: auto; /* 确保卡片可以接收鼠标���件 */
     display: flex;
     flex-direction: column;
     align-items: center;
