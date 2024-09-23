@@ -2,14 +2,19 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* 防止出现滚动条 */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* 浅灰色背景 */
     /* 创建网格背景 */
     background-image: 
+        url('../images/grid-bg.png'),
         linear-gradient(to right, #e0e0e0 1px, transparent 1px),
         linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
     background-size: 20px 20px; /* 网格大小 */
+}
+
+/* 只在主页设置 overflow: hidden */
+.home-page {
+    overflow: hidden;
 }
 
 /* 卡片容器样式 */
@@ -125,9 +130,10 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* 改为 center，使内容垂直居中 */
+    align-items: flex-start; /* 改为 flex-start，允许内容溢出时滚动 */
     padding: 20px;
     box-sizing: border-box; /* 确保 padding 不会增加页面宽度 */
+    overflow-y: auto; /* 允许垂直滚动 */
 }
 
 .content-card {
@@ -137,7 +143,7 @@ body {
     padding: 30px;
     width: 50%;
     max-width: 800px;
-    margin: 0 auto; /* 水平居中 */
+    margin: 20px auto; /* 添加上下边距 */
     text-align: center; /* 文本居中 */
 }
 
