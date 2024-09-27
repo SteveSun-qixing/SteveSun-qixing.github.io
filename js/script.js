@@ -19,7 +19,16 @@ const config = {
     // 头像大小，取窗口高度和宽度的1/3中的较小值
     get avatarSize() { return Math.min(window.innerHeight / 3, window.innerWidth / 3); },
     // 头像图片URL
-    avatarUrl: 'img/touxiang_big.webp',
+    get avatarUrl() {
+        // 检查是否有自定义头像
+        if (window.hexoConfig && window.hexoConfig.avatar) {
+            // 使用用户自定义的头像
+            return window.hexoConfig.avatar;
+        } else {
+            // 使用默认头像
+            return '/img/avatar.jpg';
+        }
+    },
     // 最片数量
     maxCards: 8,
     // 卡片重叠阈值
